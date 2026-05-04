@@ -1,0 +1,119 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Страница-1" id="kt-sQAqcq0hRY2uJZUOW">
+    <mxGraphModel dx="1414" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="store-orders" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;" value="Заказы" vertex="1">
+          <mxGeometry height="70" width="100" x="390" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="store-clients" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;" value="Клиенты" vertex="1">
+          <mxGeometry height="70" width="100" x="750" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="store-invoices" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;" value="Счета" vertex="1">
+          <mxGeometry height="70" width="100" x="990" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="store-stock" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;" value="Склад&#xa;(Товары)" vertex="1">
+          <mxGeometry height="70" width="100" x="750" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-order" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;" value="1&#xa;Оформить&#xa;заказ" vertex="1">
+          <mxGeometry height="70" width="100" x="380" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-invoice" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;" value="2&#xa;Выставить&#xa;счёт" vertex="1">
+          <mxGeometry height="70" width="100" x="730" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-payment" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;" value="3&#xa;Проверить&#xa;оплату" vertex="1">
+          <mxGeometry height="70" width="100" x="990" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-ship" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;" value="4&#xa;Отгрузить&#xa;товар" vertex="1">
+          <mxGeometry height="70" width="100" x="540" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="flow1" edge="1" parent="1" source="ae7FhGna4LENcdIL9eVa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="proc-order" value="Данные заказа">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="400" />
+              <mxPoint x="430" y="400" />
+            </Array>
+            <mxPoint x="200" y="140" as="sourcePoint" />
+            <mxPoint x="360" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow2" edge="1" parent="1" source="proc-order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="store-orders" value="Сохранить заказ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow3" edge="1" parent="1" source="store-orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="proc-invoice" value="Информация&#xa;о заказе">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow4" edge="1" parent="1" source="proc-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="store-invoices" value="Данные счёта">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow5" edge="1" parent="1" source="store-invoices" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="proc-payment" value="Счёт на оплату">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow6" edge="1" parent="1" source="proc-payment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ae7FhGna4LENcdIL9eVa-2" value="Запрос оплаты">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow8" edge="1" parent="1" source="proc-payment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="proc-ship" value="Разрешение&#xa;на отгрузку">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="305" />
+              <mxPoint x="1110" y="650" />
+              <mxPoint x="590" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow9" edge="1" parent="1" source="proc-ship" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="store-stock" value="Списать товары">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow10" edge="1" parent="1" source="store-stock" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="proc-ship" value="Товары&#xa;в наличии">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="590" />
+              <mxPoint x="610" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow11" edge="1" parent="1" source="proc-ship" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ae7FhGna4LENcdIL9eVa-5" value="Товар +&#xa;накладная">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="525" />
+              <mxPoint x="360" y="455" />
+            </Array>
+            <mxPoint x="170" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow12" edge="1" parent="1" source="ae7FhGna4LENcdIL9eVa-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="store-stock" value="Поставка&#xa;товаров">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="152" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow13" edge="1" parent="1" source="ae7FhGna4LENcdIL9eVa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="store-clients" value="Данные&#xa;регистрации">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="450" />
+              <mxPoint x="800" y="450" />
+            </Array>
+            <mxPoint x="270" y="370" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow14" edge="1" parent="1" source="store-clients" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="proc-order" value="Данные клиента">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae7FhGna4LENcdIL9eVa-3" edge="1" parent="1" source="ae7FhGna4LENcdIL9eVa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="proc-payment" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae7FhGna4LENcdIL9eVa-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 14px; font-weight: 700;&quot;&gt;Банк&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="100" x="990" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ae7FhGna4LENcdIL9eVa-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 14px; font-weight: 700;&quot;&gt;Поставщики&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="100" x="990" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="ae7FhGna4LENcdIL9eVa-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 14px; font-weight: 700;&quot;&gt;Клиенты&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="100" x="380" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
